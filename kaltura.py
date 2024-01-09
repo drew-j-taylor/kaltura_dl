@@ -7,9 +7,6 @@ def construct_url(entry_id, flavor_id, date, clas, suffix):
     return f"{BASE_URL}{entry_id}/v/1/ev/3/flavorId/{flavor_id}/name/{date}_{clas}_{suffix}.mp4"
 
 def download_video(url):
-    """
-    Downloads a video from the given URL and saves it locally.
-    """
     try:
         response = requests.get(url, stream=True)
         response.raise_for_status()
